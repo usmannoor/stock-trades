@@ -1,0 +1,172 @@
+{
+  "info": {
+    "name": "TradesService",
+    "_postman_id": "abc12345-6789-1234-5678-abcdef123456",
+    "description": "Postman collection to test TradesService endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Trade",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"buy\",\"user_id\":1,\"symbol\":\"AAPL\",\"shares\":10,\"price\":150,\"timestamp\":1591514264000}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/trades",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Trades",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/trades",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Trade by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/trades/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Trades by Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/trades?type=buy",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades"],
+          "query": [
+            {
+              "key": "type",
+              "value": "buy"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Trades by User ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/trades?user_id=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades"],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Method Not Allowed - Delete Trade",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/trades/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Method Not Allowed - Update Trade",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"sell\",\"user_id\":1,\"symbol\":\"AAPL\",\"shares\":5,\"price\":155,\"timestamp\":1591514264000}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/trades/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Method Not Allowed - Patch Trade",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"type\":\"sell\",\"user_id\":1,\"symbol\":\"AAPL\",\"shares\":5,\"price\":155,\"timestamp\":1591514264000}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/trades/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["trades", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
